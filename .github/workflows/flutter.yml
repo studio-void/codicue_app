@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Dart
+name: Flutter
 
 on:
   push:
@@ -12,7 +12,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  test:
+    name: Test
     runs-on: ubuntu-latest
 
     steps:
@@ -22,10 +23,15 @@ jobs:
       # You can specify other versions if desired, see documentation here:
       # https://github.com/dart-lang/setup-dart/blob/main/README.md
       # - uses: dart-lang/setup-dart@v1
-      - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
+      # used flutter action
+      # ref: https://velog.io/@etialmoon/GitHub-Actions-Flutter-Test-%EC%9E%90%EB%8F%99%ED%99%94
+      - uses: subosito/flutter-action@v2.21.0
+        with:
+          channel: "stable"
+          flutter-version: "3.29.3"
 
       - name: Install dependencies
-        run: dart pub get
+        run: flutter pub get
 
       # Uncomment this step to verify the use of 'dart format' on each commit.
       # - name: Verify formatting
@@ -38,5 +44,5 @@ jobs:
       # Your project will need to have tests in test/ and a dependency on
       # package:test for this step to succeed. Note that Flutter projects will
       # want to change this to 'flutter test'.
-      - name: Run tests
-        run: dart test
+      - name: Run flutter tests
+        run: flutter test
