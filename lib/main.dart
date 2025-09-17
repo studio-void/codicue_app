@@ -1,4 +1,4 @@
-import 'package:codicue_app/structure.dart';
+import 'package:codicue_app/core/structure.dart';
 import 'package:flutter/material.dart';
 
 void main() {

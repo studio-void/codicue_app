@@ -1,4 +1,4 @@
-import 'package:codicue_app/view/home.dart';
+import 'package:codicue_app/auth/auth_main_view.dart';
 import 'package:flutter/material.dart';
 
 class Structure extends StatelessWidget {
@@ -8,7 +8,7 @@ class Structure extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("CodiCue"), centerTitle: true),
-      body: const Home(),
+      body: const AuthMain(),
     );
   }
 }
